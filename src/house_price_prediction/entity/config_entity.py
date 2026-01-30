@@ -22,8 +22,8 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     load_data_file: Path
-    test_data_file: Path
-    train_data_file: Path
+    test_data_path: Path
+    train_data_path: Path
     target_column: str
     test_size: float
     random_state: int
@@ -31,11 +31,11 @@ class DataTransformationConfig:
 @dataclass
 class ModelTrainerConfig:
     root_dir: Path
-    test_data_file: Path
-    train_data_file: Path
+    test_data_path: Path
+    train_data_path: Path
     model_file: Path
     best_params_file: Path
-    metric_file: Path
+    metrics_file_name: Path
     target_column: str
     alpha: List[float]
     l1_ratio: List[float]
@@ -47,7 +47,7 @@ class ModelEvaluationConfig:
     root_dir: Path
     test_data_path: Path
     model_path: Path
-    metric_file_name: Path
+    metrics_file_name: Path
     mlflow_uri: str
     all_params: Dict[str,Any]
 

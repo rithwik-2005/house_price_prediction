@@ -51,7 +51,7 @@ class ConfigurationManager:
         return DataValidationConfig(
             root_dir=Path(config.root_dir),
             local_data_file=Path(config.local_data_file),
-            status_file=Path(config.status_file),
+            STATUS_FILE=Path(config.STATUS_FILE),
             all_schema=self.schema.COLUMNS,
         )
 
@@ -62,9 +62,9 @@ class ConfigurationManager:
 
         return DataTransformationConfig(
             root_dir=Path(config.root_dir),
-            data_file=Path(config.data_file),
-            train_data_file=Path(config.train_data_file),
-            test_data_file=Path(config.test_data_file),
+            load_data_file=Path(config.load_data_file),
+            train_data_path=Path(config.train_data_path),
+            test_data_path=Path(config.test_data_path),
             target_column=self.schema.TARGET_COLUMN,
             test_size=self.params.split.test_size,
             random_state=self.params.seed.random_state,
@@ -77,11 +77,12 @@ class ConfigurationManager:
 
         return ModelTrainerConfig(
             root_dir=Path(config.root_dir),
-            train_data_file=Path(config.train_data_file),
-            test_data_file=Path(config.test_data_file),
+            train_data_path=Path(config.train_data_path),
+            test_data_path=Path(config.test_data_path),
             model_file=Path(config.model_file),
             best_params_file=Path(config.best_params_file),
-            metrics_file=Path(config.metrics_file),
+            metrics_file_name=Path(config.metrics_file_name
+                                   ),
             target_column=self.schema.TARGET_COLUMN,
             alpha=self.params.models.ElasticNet.alpha,
             l1_ratio=self.params.models.ElasticNet.l1_ratio,
@@ -97,7 +98,7 @@ class ConfigurationManager:
             root_dir=Path(config.root_dir),
             test_data_path=Path(config.test_data_path),
             model_path=Path(config.model_path),
-            metrics_file=Path(config.metrics_file),
+            metrics_file_name=Path(config.metrics_file_name),
             mlflow_uri=os.getenv("MLFLOW_TRACKING_URI"),
             all_params=self.params.models.ElasticNet,
         )
