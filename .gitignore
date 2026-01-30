@@ -206,3 +206,36 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 price
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.price/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+
+# Artifacts (generated)
+artifacts/
+
+# MLflow
+mlruns/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+artifacts/ 

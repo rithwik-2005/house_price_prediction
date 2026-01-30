@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.price/
+
+# Git
+.git
+.gitignore
+
+# Environment variables
+.env
+
+# Logs & artifacts (training only)
+logs/
+artifacts/data_ingestion/
+artifacts/data_validation/
+artifacts/data_transformation/
+
+# Notebooks & experiments
+*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db
