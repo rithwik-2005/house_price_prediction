@@ -88,7 +88,7 @@ class ModelTrainer:
             save_bin(Path(self.config.model_file), best_model)
 
             # Save metrics
-            with open(Path(self.config.metric_file_name), "w") as f:
+            with open(Path(self.config.metrics_file_name), "w") as f:
                 json.dump(metrics, f, indent=2)
 
             # Save best parameters

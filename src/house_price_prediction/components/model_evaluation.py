@@ -41,10 +41,7 @@ class ModelEvaluation:
             logger.info(f"Model loaded from {self.config.model_path}")
 
             # Split features and target
-            target_column = self.config.all_params.get("target_column")
-
-            if target_column is None:
-                raise ValueError("Target column not found in evaluation parameters")
+            target_column = self.config.target_column
 
             X_test = test_df.drop(columns=[target_column])
             y_test = test_df[target_column]
@@ -61,7 +58,7 @@ class ModelEvaluation:
             logger.info(f"Test R2 Score: {test_r2}")
 
             # Save metrics locally
-            with open(Path(self.config.metric_file_name), "w") as f:
+            with open(Path(self.config.metrics_file_name), "w") as f:
                 json.dump(metrics, f, indent=2)
 
             # Log to MLflow

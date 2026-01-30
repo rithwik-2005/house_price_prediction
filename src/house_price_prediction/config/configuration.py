@@ -100,4 +100,5 @@ class ConfigurationManager:
             metrics_file_name=Path(config.metrics_file_name),
             mlflow_uri=os.getenv("MLFLOW_TRACKING_URI"),
             all_params=self.params.models.ElasticNet,
+            target_column=self.schema.TARGET_COLUMN.name,
         )

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; text-align: center; }
+        form {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        input {
+            margin: 6px 0;
+            padding: 8px;
+            width: 95%;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>House Price Prediction</h2>
+
+<form action="/predict" method="post">
+    <input name="bedrooms" placeholder="Bedrooms" required>
+    <input name="bathrooms" placeholder="Bathrooms" required>
+    <input name="sqft_living" placeholder="Sqft Living" required>
+    <input name="sqft_lot" placeholder="Sqft Lot" required>
+    <input name="floors" placeholder="Floors" required>
+    <input name="waterfront" placeholder="Waterfront (0/1)" required>
+    <input name="view" placeholder="View (0-4)" required>
+    <input name="condition" placeholder="Condition (1-5)" required>
+    <input name="sqft_above" placeholder="Sqft Above" required>
+    <input name="sqft_basement" placeholder="Sqft Basement" required>
+    <input name="yr_built" placeholder="Year Built" required>
+    <input name="yr_renovated" placeholder="Year Renovated (0 if none)" required>
+
+    <button type="submit">Predict</button>
+</form>
+
+</body>
+</html>

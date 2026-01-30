@@ -50,6 +50,7 @@ class ModelEvaluationConfig:
     metrics_file_name: Path
     mlflow_uri: str
     all_params: Dict[str,Any]
+    target_column: str
 
 
 
