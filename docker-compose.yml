@@ -2,11 +2,10 @@ version: "3.9"
 
 services:
   house-price-app:
-    build: .
+    image: rithwik2005/house-price-app:latest
     container_name: house_price_prediction_app
     ports:
-      - "5000:5000"
-    volumes:
-      - .:/app
+      - "80:5000"
     environment:
       - FLASK_ENV=production
+    restart: unless-stopped
