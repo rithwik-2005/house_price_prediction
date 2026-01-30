@@ -65,7 +65,7 @@ class ConfigurationManager:
             load_data_file=Path(config.load_data_file),
             train_data_path=Path(config.train_data_path),
             test_data_path=Path(config.test_data_path),
-            target_column=self.schema.TARGET_COLUMN,
+            target_column=self.schema.TARGET_COLUMN.name,
             test_size=self.params.split.test_size,
             random_state=self.params.seed.random_state,
         )
@@ -81,9 +81,8 @@ class ConfigurationManager:
             test_data_path=Path(config.test_data_path),
             model_file=Path(config.model_file),
             best_params_file=Path(config.best_params_file),
-            metrics_file_name=Path(config.metrics_file_name
-                                   ),
-            target_column=self.schema.TARGET_COLUMN,
+            metrics_file_name=Path(config.metrics_file_name),
+            target_column=self.schema.TARGET_COLUMN.name,
             alpha=self.params.models.ElasticNet.alpha,
             l1_ratio=self.params.models.ElasticNet.l1_ratio,
             random_state=self.params.seed.random_state,
